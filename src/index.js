@@ -5,7 +5,16 @@ dotenv.config({ path: './.env' });
 // import { DB_name } from './constant';
 import connectDB from '../db/index.js'; // Adjust the path to your connectDB function
 
-connectDB();
+connectDB().then(()=>{
+    app.listen(process.env.PORT, () => {
+        console.log(`Server is running on port ${process.env.PORT}`);
+    }
+    );
+}).catch((error) => {
+    console.error('Error connecting to MongoDB:', error);
+    throw error; // Rethrow the error to stop execution
+});
+// const mongoose = require('mongoose');
 
 
 
