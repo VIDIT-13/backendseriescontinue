@@ -4,7 +4,7 @@ dotenv.config({ path: './.env' });
 // import mongoose from 'mongoose';
 // import { DB_name } from './constant';
 import connectDB from '../db/index.js'; // Adjust the path to your connectDB function
-
+import { app } from './app.js';
 connectDB().then(()=>{
     app.listen(process.env.PORT, () => {
         console.log(`Server is running on port ${process.env.PORT}`);
