@@ -10,3 +10,4 @@ class Apiresponse {
     this.error = null;
   }
 }   
+export default Apiresponse;
